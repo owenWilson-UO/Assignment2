@@ -15,7 +15,6 @@ public class KeyWaypointController : MonoBehaviour
         nextWaypoint = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector3 toPlayer = player.position - simpleGemsAnim.initialPosition;
@@ -23,8 +22,7 @@ public class KeyWaypointController : MonoBehaviour
 
         if (sqrDistance < 9f && nextWaypoint < 2) //3 units away
         {
-            Debug.Log("within distance");
-            //moving = true;
+            moving = true;
         }
 
         if (moving)
