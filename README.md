@@ -11,7 +11,7 @@
 - There are 3 key locations (key visibly moves towards its next position for easy tracking):
   1. In the Bathroom North of the spawn point
   2. On the dining table along the path to the original victory point
-  3. In the left corner of the bedroom south of the hallway where the original victory point was
+  3. In the left corner of the bedroom south of the hallway where the original victory point was (I had to adjust the last ghost's waypoints to make this location accesible)
 - Includes pickup sound effect
 
 ### Wall & Lock System
