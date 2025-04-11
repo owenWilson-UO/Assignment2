@@ -1,6 +1,4 @@
-# Haunted Jaunt Game - Features
-
-## Core Mechanics
+# Assignment 2 Added Features
 
 ### Red Screen Warning
 - Uses linear interpolation (Lerp) for smooth screen transitions
@@ -27,7 +25,7 @@
   5. rumble sound during movement
 
 ### Victory
-Reach the trophy on the far left after unlocking the walls to win.
+- Reach the trophy on the far left after unlocking the walls to win.
 
 ### Effects
 - Particle effect for wall descent
