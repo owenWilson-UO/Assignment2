@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     Vector3 m_Movement;
     Quaternion m_Rotation = Quaternion.identity;
 
+    private bool hasKey = false;
+
     void Start ()
     {
         m_Animator = GetComponent<Animator> ();
@@ -59,5 +61,20 @@ public class PlayerMovement : MonoBehaviour
     {
         m_Rigidbody.MovePosition (m_Rigidbody.position + m_Movement * m_Animator.deltaPosition.magnitude);
         m_Rigidbody.MoveRotation (m_Rotation);
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Key"))
+        {
+            hasKey = true;
+            other.gameObject.SetActive(false);
+        }
+
+        if (other.gameObject.CompareTag("Unlock") && hasKey)
+        {
+            other.gameObject.SetActive(false);
+        }
     }
 }

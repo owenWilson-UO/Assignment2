@@ -15,7 +15,7 @@ namespace Benjathemaker
         public bool useEasingForFloating = false; // Separate toggle for floating ease
         public float floatHeight = 1f; // Max height displacement
         public float floatSpeed = 1f;
-        private Vector3 initialPosition;
+        public Vector3 initialPosition;
         private float floatTimer;
 
         private Vector3 initialScale;
