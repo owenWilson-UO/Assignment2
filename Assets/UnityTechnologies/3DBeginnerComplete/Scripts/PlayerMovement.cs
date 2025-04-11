@@ -16,6 +16,16 @@ public class PlayerMovement : MonoBehaviour
     Quaternion m_Rotation = Quaternion.identity;
 
     private bool hasKey = false;
+    public AudioSource unlock;
+    public AudioSource keyPickup;
+    public AudioSource wallMove;
+
+    public MoveWallDown wall1;
+    public MoveWallDown wall2;
+    public MoveWallDown wall3;
+    public MoveWallDown wall4;
+
+    public ParticleSystem smoke;
 
     void Start ()
     {
@@ -70,11 +80,32 @@ public class PlayerMovement : MonoBehaviour
         {
             hasKey = true;
             other.gameObject.SetActive(false);
+            keyPickup.Play();
         }
 
         if (other.gameObject.CompareTag("Unlock") && hasKey)
         {
             other.gameObject.SetActive(false);
+            unlock.time = 0.6f;
+            unlock.Play();
+            Invoke(nameof(StartWallMove), 0.5f);
         }
+    }
+
+    private void StartWallMove()
+    {
+        wall1.move = true;
+        wall2.move = true;
+        wall3.move = true;
+        wall4.move = true;
+        smoke.Play();
+        wallMove.time = 1.3f;
+        wallMove.Play();
+        Invoke(nameof(StopAudio), 2f);
+    }
+
+    private void StopAudio()
+    {
+        wallMove.Stop();
     }
 }

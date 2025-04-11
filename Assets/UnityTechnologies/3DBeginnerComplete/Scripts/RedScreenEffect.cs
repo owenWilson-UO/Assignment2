@@ -16,10 +16,11 @@ public class RedScreenEffect : MonoBehaviour
 
     void Update()
     {
-            currentAlpha = Mathf.Lerp(currentAlpha, shouldFadeIn ? 1f : 0f, Time.deltaTime * fadeSpeed);
-            Color c = redScreenImage.color;
-            c.a = currentAlpha;
-            redScreenImage.color = c;
+        //Using interpolation to fade the red screen in
+        currentAlpha = Mathf.Lerp(currentAlpha, shouldFadeIn ? 1f : 0f, Time.deltaTime * fadeSpeed);
+        Color c = redScreenImage.color;
+        c.a = currentAlpha;
+        redScreenImage.color = c;
     }
 
     public void RedScreenOn()

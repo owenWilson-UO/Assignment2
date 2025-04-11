@@ -19,8 +19,8 @@ public class KeyWaypointController : MonoBehaviour
     void Update()
     {
         Vector3 toPlayer = player.position - simpleGemsAnim.initialPosition;
-        float sqrDistance = Vector3.Dot(toPlayer, toPlayer);
-        //Debug.Log($"distance sqr: {sqrDistance} next waypoint: {keyWaypoints[nextWaypoint].position} moving: {moving}");
+        float sqrDistance = Vector3.Dot(toPlayer, toPlayer); // Using the dot product here to calculate distance squared from the key to the player
+
         if (sqrDistance < 9f && nextWaypoint < 2) //3 units away
         {
             Debug.Log("within distance");
