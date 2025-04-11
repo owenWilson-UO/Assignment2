@@ -30,7 +30,7 @@ public class KeyWaypointController : MonoBehaviour
             simpleGemsAnim.initialPosition = Vector3.Lerp(simpleGemsAnim.initialPosition, keyWaypoints[nextWaypoint].position, Time.deltaTime);
         }
 
-        if ((simpleGemsAnim.initialPosition - keyWaypoints[nextWaypoint].position).sqrMagnitude < 0.1f)
+        if (nextWaypoint < keyWaypoints.Length && (simpleGemsAnim.initialPosition - keyWaypoints[nextWaypoint].position).sqrMagnitude < 0.1f)
         {
             moving = false;
             nextWaypoint++;
